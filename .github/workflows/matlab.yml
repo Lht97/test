@@ -1,0 +1,23 @@
+name: Run MATLAB Script with Arguments
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  run-matlab:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Setup MATLAB
+        uses: matlab-actions/setup-matlab@v1
+        with:
+          matlab-version: R2021a
+
+      - name: Run MATLAB Script with Arguments
+        uses: matlab-actions/run-matlab@v1
+        with:
+          script: path/to/your/script.m
+          arguments: 'arg1 arg2'
