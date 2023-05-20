@@ -10,4 +10,4 @@ jobs:
     - uses: matlab-actions/setup-matlab@v1
       with:
         matlab-version: 'R2021a'
-    - run: matlab 
+    - run: matlab hello.m
