@@ -1,0 +1,22 @@
+name: Run MATLAB
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-matlab:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set up MATLAB
+        uses: matlab-actions/setup-matlab@v1
+        with:
+          matlab-version: 'R2021a'  # 指定要使用的 MATLAB 版本
+
+      - name: Run MATLAB Script
+        uses: matlab-actions/run-matlab@v1
+        with:
+          script: path/to/your/script.m  # 指定要运行的 MATLAB 脚本的路径
